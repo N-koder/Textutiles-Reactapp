@@ -58,7 +58,7 @@ export default function TestForm(props) {
             <h3 style = {{ color : props.mode === `dark` ?`white`:`black`}}>{props.heading}</h3>
             <div className="form-floating">
 
-                <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" value={text} onChange={HandleChange} style={{ height: "300px", backgroundColor : props.mode === `dark` ?`grey`:`white` , color : props.mode === `dark` ?`white`:`black`}}>
+                <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" value={text} onChange={HandleChange} style={{ height: "300px", backgroundColor : props.mode === `dark` ?`#44596a`:`white` , color : props.mode === `dark` ?`white`:`black`}}>
                 </textarea>
 
                 <button className="btn btn-primary my-2" onClick={HandleExtraClick}>Remove extra spaces</button>
@@ -70,9 +70,9 @@ export default function TestForm(props) {
 
             <div className="container my-3" style = {{ color : props.mode === `dark` ?`white`:`black`}}>
                 <h3>Your text summery</h3>
-                <p>Words : {text.split(" ").length}</p>
+                <p>Words : {text.split(" ").filter((element) => {return element.length!==0}).length}</p>
                 <p>Characters : {text.length}</p>
-                <p>{0.008*(text.split(" ").length)} : Min to read</p>
+                <p>{0.008*(text.split(" ").filter((element) => {return element.length!==0}).length)} : Min to read</p>
                 <h4>Preview</h4>
                 <p>{text.length>0?text:"Enter you text in the above box to preview it here...."}</p>
             </div>

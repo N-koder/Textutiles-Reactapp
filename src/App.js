@@ -38,7 +38,7 @@ function App() {
   const toogleMode = () => {
     if (mode === "light") {
       setMode("dark");
-      document.body.style.backgroundColor = "grey";
+      document.body.style.backgroundColor = "#44596a";
       showAlert("Dark mode has been unabled", "success")
     }
     else {
